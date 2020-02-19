@@ -12,11 +12,11 @@
 </head>
 <body class="has-background-light">
     <nav class="navbar is-primary is-spaced" role="navigation" aria-label="main navigation">
+        <a class="navbar-item" href="{% url 'homepage:index' %}">Homepage</a>
+        <a class="navbar-item" href="{% url 'homepage:about' %}">About</a>
+        <a class="navbar-item" href="{% url 'homepage:contact' %}">Contact</a>
         <div class="navbar-menu">
             <div class="navbar-start">
-                <a class="navbar-item" href="{% url 'homepage:index' %}">Homepage</a>
-                <a class="navbar-item" href="{% url 'homepage:about' %}">About</a>
-                <a class="navbar-item" href="{% url 'homepage:contact' %}">Contact</a>
             </div>
         </div>
     </nav>
