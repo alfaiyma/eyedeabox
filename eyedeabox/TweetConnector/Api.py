@@ -28,7 +28,7 @@ class twitterApi():
 
     def runQuery(self):
         if self.__tapi  :
-            tweets = [self.__tapi.search(query) for query in self._queries] 
+            tweets = [self.__tapi.search(query, tweet_mode="extended") for query in self._queries]
             return list(itertools.chain.from_iterable(tweets))
         raise ValueError("Did not connect before executing query")
 
