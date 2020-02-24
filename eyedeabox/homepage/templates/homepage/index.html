@@ -32,10 +32,18 @@
                                     <div class="content">
                                         <div><p>{{ tweet.tweet_text }}</p></div>
                                     </div>
-                                    <footer class="card-footer">
-                                        <time
-                                                class="level-left card-footer-item is-small has-text-weight-light">
-                                            {{ tweet.tweet_date }}</time>
+                                    <footer class="card-footer level">
+                                        <div class="level-left">
+                                            <a
+                                                href="https://twitter.com/{{ tweet.tweet_user }}"
+                                                class="level-item is-link card-footer-item is-small has-text-weight-light">
+                                                @{{ tweet.tweet_user }}
+                                            </a>
+                                            <time
+                                                class="level-item card-footer-item is-small has-text-weight-light">
+                                                {{ tweet.tweet_date }}
+                                            </time>
+                                        </div>
                                     </footer>
                                 </div>
                             </div>

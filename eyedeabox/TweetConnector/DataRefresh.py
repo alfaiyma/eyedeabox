@@ -18,4 +18,5 @@ class DataRefresh():
                 newModel.tweet_text = tweet.full_text
                 newModel.tweet_id = tweet.id
                 newModel.tweet_date = tweet.created_at
+                newModel.tweet_user = tweet.user.screen_name
                 newModel.save()
