@@ -1,10 +1,9 @@
-from .Api import twitterApi
-from django.utils import dateparse
+from .Api import TwitterApi
 from homepage.models import TweetRef
 
 class DataRefresh():
     def __init__(self):
-        self.__twapi: twitterApi = twitterApi(
+        self.__twapi: TwitterApi = TwitterApi(
             'GeoyOlLBm85Y4VroHHklBVn1i',
             'JtCdxEumajgcRPcEXZWq9TxQKl7UmDg8MlF6mn2hTzNCstZiRb',
             '224138640-3fA4V37Eve9OCYHwLYfGd9BoGKwe7BfdQhRq8jqe',

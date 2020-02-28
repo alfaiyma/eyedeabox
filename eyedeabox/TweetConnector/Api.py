@@ -1,19 +1,26 @@
 import tweepy
 import itertools
 
-class twitterApi():
-    _queries = [
-        'I need an app',
-        'Is there an app to',
-        'Give me an app'
+# TODO: Remove duplicate worded tweets (i.e retweets)
+"""
+Class to run queries and interface with the core tweepy twitter api    
+"""
+
+
+class TwitterApi:
+    _hashtags = [
+        'AppIdeas',
+        'BusinessIdeas',
+        'GiveMeAnIdea',
+        'App',
+        'BuildMeAnApp',
     ]
 
-    def __init__(self, 
-    consumer_key: str,
-    consumer_secret:str,
-    access_token: str,
-    access_token_secret: str):
-    
+    def __init__(self,
+                 consumer_key: str,
+                 consumer_secret: str,
+                 access_token: str,
+                 access_token_secret: str):
         self.__ck = consumer_key
         self.__cs = consumer_secret
         self.__at = access_token
@@ -27,8 +34,8 @@ class twitterApi():
         self.__tapi = tweepy.API(authorization, wait_on_rate_limit=True)
 
     def runQuery(self):
-        if self.__tapi  :
-            tweets = [self.__tapi.search(query, tweet_mode="extended") for query in self._queries]
+        if self.__tapi:
+            tweets = [self.__tapi.search(query, tweet_mode="extended") for query in self._hashtags]
             return list(itertools.chain.from_iterable(tweets))
         raise ValueError("Did not connect before executing query")
 
