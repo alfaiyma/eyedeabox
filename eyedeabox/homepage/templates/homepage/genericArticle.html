@@ -8,14 +8,13 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.8.0/css/bulma.min.css">
   <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
 </head>
-<body>
-    <nav class="navbar" role="navigation" aria-label="main navigation">
+<body class="has-background-light">
+    <nav class="navbar is-primary is-spaced" role="navigation" aria-label="main navigation">
+        <a class="navbar-item is-size-3-touch has-text-centered-touch" href="{% url 'homepage:index' %}">Homepage</a>
+        <a class="navbar-item is-size-3-touch has-text-centered-touch" href="{% url 'homepage:about' %}">About</a>
+        <a class="navbar-item is-size-3-touch has-text-centered-touch" href="{% url 'homepage:contact' %}">Contact</a>
         <div class="navbar-menu">
             <div class="navbar-start">
-                {% comment %} TODO: Actually Implement this {% endcomment %}
-                <a class="navbar-item" href="{% url 'homepage:index' %}">Homepage</a>
-                <a class="navbar-item" href="{% url 'homepage:about' %}">About</a>
-                <a class="navbar-item" href="{% url 'homepage:contact' %}">Contact</a>
             </div>
         </div>
     </nav>
@@ -24,7 +23,7 @@
             <article>
                 <h1 class="title">{{ headline }}</h1>
                 <p class="content">
-                    {{ content }}
+                    {{ content | urlize }}
                 </p>
             </article>
         </div>

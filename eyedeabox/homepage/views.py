@@ -5,6 +5,8 @@ from django.views import generic
 from TweetConnector import DataRefresh
 from .models import TweetRef
 
+import os
+
 class IndexView(generic.ListView):
     template_name = 'homepage/index.html'
     context_object_name = 'tweet_list'
@@ -20,16 +22,22 @@ def onDBRefresh(request: HttpRequest) -> HttpResponse:
     refreshAPi.refresh()
     return HttpResponseRedirect(reverse('homepage:index'))
 
+
 def aboutView(request: HttpRequest) -> HttpResponse:
+    file_content: str = 'Error loading content'
+    print(os.getcwd())
+    with open('./homepage/Content/About.txt', 'r') as f:
+        file_content = f.read()
+
     context = {
         'headline': "About",
-        'content': "Hello everyone and thank you for visting this little app. What is this app about? Well it's to provide you a look into what needs that are not being met. I hope this site inspires you to go on a journey to bring an idea to life."
+        'content': file_content
     }
     return render(request, 'homepage/genericArticle.html', context)
 
 def contactView(request: HttpRequest) -> HttpResponse:
     context = {
         'headline': "Contact Details",
-        'content': "Email: eyedeabox@mohammad-alfaiyaz.com\n" 
+        'content': "Ideas, suggestions or comments? Email me at eyedeabox@mohammad-alfaiyaz.com"
     }
     return render(request, 'homepage/genericArticle.html', context)

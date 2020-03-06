@@ -9,11 +9,11 @@ Class to run queries and interface with the core tweepy twitter api
 
 class TwitterApi:
     _hashtags = [
-        'AppIdeas',
-        'BusinessIdeas',
-        'GiveMeAnIdea',
-        'App',
-        'BuildMeAnApp',
+        'I need an app to',
+        'I wish there was a way to',
+        'Why is process so complicated',
+        'Is there a business',
+        'What I need is',
     ]
 
     def __init__(self,
