@@ -2,10 +2,10 @@ import tweepy
 
 # Setup keys to authenticate requests
 
-consumer_key= 'GeoyOlLBm85Y4VroHHklBVn1i'
-consumer_secret= 'JtCdxEumajgcRPcEXZWq9TxQKl7UmDg8MlF6mn2hTzNCstZiRb'
-access_token= '224138640-3fA4V37Eve9OCYHwLYfGd9BoGKwe7BfdQhRq8jqe'
-access_token_secret= '93hvjOo8wEEh2JUGkDhOOOTnTcWaAdL1APv6sUu08EhXp'
+consumer_key= 'consumer_key'
+consumer_secret= 'consumer_secret'
+access_token= 'token'
+access_token_secret= 'token_secret'
 
 def vimTest(number: int):
     print(number)
